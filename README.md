@@ -7,9 +7,9 @@ This project is centered around database schema migrations using two different m
 * State-based migrations: The final Database is declared through SQL Scripts. Changes happens by making SQL files with versions, eg. V1_InitialSchema.sql. These scripts then update the database.
 
 ## GIT and Branching
-Each branch will have a naming as such: feat/V#-changes-method.
-* V# describes the version, like V1 for version 1.
-* changes describe what happened in the code, what was added.
+Each branch will have a naming as such: feat/changes-method.
+* feat stands for Feature.
+* changes describe what happened in the code, what was added or changed.
 * method describe if EF Code-first(ef) or State-based was used(state)
 
 ## Basic Setup of main branch
