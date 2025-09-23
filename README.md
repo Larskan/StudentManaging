@@ -59,3 +59,10 @@ feat/DepartmentModel
 feat/CourseCreditModify
 * -ef: Change attribute type of Credits in Course Model from integer to decimal and update database migration
 * -state: Creating the V7_CourseCreditModify.sql
+
+## Why Destructive Approach in 5. Rename Grade Attribute to FinalGrade in Enrollment.
+For Sqlite the destructive approach is common, where it creates a copy of the table and drops the original, keeping the copied table with the changed attributes.
+Of course the risk with destructive is it might cause a loss of data, where non destructive preserves all existing data.
+But that is the reality of using SQLite, it doesnt support direct column renames in EF migrations, so EF uses destructive approach. 
+For this particular project, I decided the risk was worth it, the schema itself is simple and no production data is at risk and the migration steps preserves values by copying them into the new tables.
+In worst case scenarios, the earlier versions still got the data, so it would become a matter of rolling back to an earlier migration.
