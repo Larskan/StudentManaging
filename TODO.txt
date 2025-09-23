@@ -1,0 +1,14 @@
+Commands used
+- dotnet new console -n StudentManaging - Basic console project
+- dotnet tool install --global dotnet-ef - Double checking we got the EF-CLI
+
+
+For main:
+- Add the basic models.
+
+Branch: feat/initial-schema-ef - V1_InitialSchema.sql
+Branch: 
+Branch: 
+Branch: 
+Branch: 
+Branch: 
