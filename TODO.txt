@@ -1,6 +1,7 @@
 Commands used
 - dotnet new console -n StudentManaging - Basic console project
 - dotnet tool install --global dotnet-ef - Double checking we got the EF-CLI
+- dotnet add package Microsoft.EntityFrameworkCore.SqlServer - Adding EF
 
 
 For main:
