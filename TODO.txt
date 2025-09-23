@@ -7,9 +7,17 @@ Commands used
 For main:
 - Add the basic models.
 
-Branch: feat/initial-schema-ef - V1_InitialSchema.sql
-Branch: 
-Branch: 
-Branch: 
-Branch: 
-Branch: 
+Branch: feat/initial-schema-ef
+Branch: feat/StudentMiddleName-ef
+Branch: feat/StudentBirthDate-ef
+Branch: feat/InstructorModel-ef
+Branch: feat/GradeRenaming-ef
+Branch: feat/DepartmentModel-ef
+Branch: feat/CourseCreditModify-ef
+Branch: feat/initial-schema-state - V1_InitialSchema.sql
+Branch: feat/StudentMiddleName-state - V2_AddStudentMiddleName.sql
+Branch: feat/StudentBirthDate-state - V3_AddStudentBirthDate.sql
+Branch: feat/InstructorModel-state - V4_AddInstructorModel.sql
+Branch: feat/GradeRenaming-state - V5_GradeRenaming.sql
+Branch: feat/DepartmentModel-state - V6_AddDepartmentModel.sql
+Branch: feat/CourseCreditModify-state - V7_CourseCreditModify.sql
