@@ -8,6 +8,6 @@
         
         public int CourseId { get; set; }
         
-        public string? Grade { get; set; }
+        public string? FinalGrade { get; set; }
     }
 }
