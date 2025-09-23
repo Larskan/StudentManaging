@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentManaging.Data;
 
@@ -10,9 +11,11 @@ using StudentManaging.Data;
 namespace StudentManaging.Migrations
 {
     [DbContext(typeof(SMDBContext))]
-    partial class SMDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250923223932_ModifyCourseCreditType")]
+    partial class ModifyCourseCreditType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
