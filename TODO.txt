@@ -3,6 +3,10 @@ Commands used
 - dotnet tool install --global dotnet-ef - Double checking we got the EF-CLI
 - dotnet add package Microsoft.EntityFrameworkCore.Sqlite - Adding EF
 
+For ef migration: 
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
 
 For main:
 
