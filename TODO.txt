@@ -5,7 +5,6 @@ Commands used
 
 
 For main:
-- Add the basic models.
 
 Branch: feat/initial-schema-ef
 Branch: feat/StudentMiddleName-ef
