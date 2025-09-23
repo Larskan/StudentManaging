@@ -15,6 +15,7 @@ using (var context = new SMDBContext())
         var student1 = new Student
         {
             FirstName = "Lars",
+            MiddleName = "Mikkel",
             LastName = "Hein",
             Email = "lars.hein@example.com",
             EnrollmentDate = DateTime.Now
