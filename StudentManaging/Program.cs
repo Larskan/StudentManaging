@@ -17,6 +17,7 @@ using (var context = new SMDBContext())
             FirstName = "Lars",
             MiddleName = "Mikkel",
             LastName = "Hein",
+            DateOfBirth = new DateTime(2000, 1, 1),
             Email = "lars.hein@example.com",
             EnrollmentDate = DateTime.Now
         };
