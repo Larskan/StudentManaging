@@ -66,3 +66,9 @@ Of course the risk with destructive is it might cause a loss of data, where non 
 But that is the reality of using SQLite, it doesnt support direct column renames in EF migrations, so EF uses destructive approach. 
 For this particular project, I decided the risk was worth it, the schema itself is simple and no production data is at risk and the migration steps preserves values by copying them into the new tables.
 In worst case scenarios, the earlier versions still got the data, so it would become a matter of rolling back to an earlier migration.
+
+## Why Destructive Approach in 7. Modify the Course Credits Relation
+Since I am going from int to decimal, it isn't as destructive, as decimal to int would have been.
+If I had gone from decimal to int I would have lost precision in the data, combined with the EF on SQLite rebuilding the data, there is a risk of data loss.
+However since I am going from int to decimal, that particular risk is a non-issue.
+I still have some risk due to the original table being dropped in the conversion, but it is an acceptable risk because the project is simple and I got the data preserved through earlier iterations.
