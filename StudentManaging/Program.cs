@@ -1,36 +1,20 @@
 ﻿using StudentManaging.Data;
-using StudentManaging.Models;
+using Microsoft.EntityFrameworkCore;
 
-// Bootstrap mechanism.
+// This program is just a checker that the database can be created and migrations applied.
+// In a real application, you would have more logic here to interact with the user.
 
-// Scoped instance of EF Core Database, to interact with SQLite DB. 
-// using ensures disposal of context when done.
+Console.WriteLine("Starting Student Managing Application...");
+
 using (var context = new SMDBContext())
 {
-    // Ensure database is created and apply migrations if any
-    context.Database.EnsureCreated();
+    // Apply any pending migrations automatically
+    context.Database.Migrate();
 
-    if (!context.Students.Any())
-    {
-        var student1 = new Student
-        {
-            FirstName = "Lars",
-            MiddleName = "Mikkel",
-            LastName = "Hein",
-            DateOfBirth = new DateTime(2000, 1, 1),
-            Email = "lars.hein@example.com",
-            EnrollmentDate = DateTime.Now
-        };
-
-        context.Students.Add(student1);
-        context.SaveChanges();
-
-        Console.WriteLine($"Added student: {student1.FirstName} {student1.LastName}");
-    }
-    else
-    {
-        var student = context.Students.First();
-        context.SaveChanges();
-        Console.WriteLine($"First student in database: {student.FirstName} {student.LastName}");
-    }
+    // Get the last applied migration
+    var lastMigration = context.Database.GetAppliedMigrations().LastOrDefault();
+    Console.WriteLine($"Database is up-to-date with latest migrations. Latest Migration applies: {lastMigration}");
 }
+
+// Result from dotnet run:
+// Database is up-to-date with latest migrations. Latest Migration applies: 20250923223932_ModifyCourseCreditType
