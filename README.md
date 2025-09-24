@@ -49,6 +49,9 @@ For Version 2, 3, 5 and 7: I created another partial migration, it is instead an
 * This is useful for developing environments or testing environments, without having to recreate the entire database.
 * It is worth noting, these partial ones are not fully state-based, since they don't represent the entire database schema, they are there for some added flexibility.
 
+I repeated the branch approach I did in EF, where each branch only contains the previous iterations and its own.
+Until finally merging everything into Main, without any merge errors.
+
 
 
 
