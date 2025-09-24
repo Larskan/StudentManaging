@@ -44,6 +44,7 @@ Until finally merging everything into Main, without any merge errors.
 ## My approach to State-based migrations
 Since State-based migrations are all about creating the final version of a database, I used full schema sql files that can be run as query on any PC and create identical databases.
 * This is useful for a full redeployment or a new database in a new environment.
+
 For Version 2, 3, 5 and 7: I created another partial migration, it is instead an incremental change to an existing database.
 * This is useful for developing environments or testing environments, without having to recreate the entire database.
 * It is worth noting, these partial ones are not fully state-based, since they don't represent the entire database schema, they are there for some added flexibility.
