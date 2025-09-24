@@ -1,4 +1,4 @@
--- Full Schema with Student Birth option now included
+-- Full Schema with Instructor Table now included
 -- The State-based is written in SQL Server syntax, rather than the SQLite syntax used in the change-based migrations.
 
 -- Transaction is to ensure they all succeed or fail together, easier to rollback if needed
@@ -16,7 +16,9 @@ CREATE TABLE Students (
 CREATE TABLE Courses (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     Title NVARCHAR(100) NOT NULL,
-    Credits INT NOT NULL
+    Credits INT NOT NULL,
+    InstructorId INT NULL,
+    FOREIGN KEY (InstructorId) REFERENCES Instructors(Id) ON DELETE SET NULL -- If an instructor is deleted, set to NULL, since course still exists.
 );
 
 CREATE TABLE Enrollments (
@@ -28,7 +30,16 @@ CREATE TABLE Enrollments (
     FOREIGN KEY (CourseId) REFERENCES Courses(Id) ON DELETE CASCADE
 );
 
--- Indexes are for the database to quickly find the data, purely for performance optimization
+CREATE TABLE Instructors (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    FirstName NVARCHAR(100) NOT NULL,
+    LastName NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    HireDate DATETIME
+);
+
+-- Indexes are for the database to quickly find the data, purely for performance optimization, usually for foreign keys
 CREATE INDEX "IX_Enrollments_CourseId" ON "Enrollments" ("CourseId");
 CREATE INDEX "IX_Enrollments_StudentId" ON "Enrollments" ("StudentId");
+CREATE INDEX "IX_Courses_InstructorId" ON "Courses" ("InstructorId");
 COMMIT;
