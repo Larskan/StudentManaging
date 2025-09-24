@@ -12,6 +12,7 @@ namespace StudentManaging.Models
 
         public DateTime? EnrollmentDate { get; set; }
 
-        public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
+        // Represents the one-to-many relationship with Enrollment
+        public ICollection<Enrollment>? Enrollments { get; set; } = new List<Enrollment>();
     }
 }
