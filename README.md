@@ -12,6 +12,15 @@ Each branch will have a naming as such: feat/changes-method.
 * changes describe what happened in the code, what was added or changed.
 * method describe if EF Code-first(ef) or State-based was used(state)
 
+# The Main Branch
+The main branch contains the totality of all branches, merged into one to easily see what everything contains.
+To see specific changes, you will need to check the other branches.
+The folder named "Migrations" contain the Change-based migrations.
+The folder named "MigrationsSQL" contain the State-based migrations.
+The folder named "Models" contain the various models.
+The folder named "Data" contain the DbContext.
+
+
 ## Basic Setup of main branch
 Initialize Project:
 ```
